@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="500" id="myChart"></canvas>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+		<script>
+			var ctx = document.getElementById("myChart").getContext("2d");
+
+			var data = [
+				{
+					x: 5,
+					y: 4
+				},
+				{
+					x: 2,
+					y: 14
+				},
+				{
+					x: 4,
+					y: 12
+				},
+				{
+					x: 2,
+					y: 10
+				},
+				{
+					x: 3,
+					y: 4
+				},
+				{
+					x: 3,
+					y: 5
+				},
+				{
+					x: 3,
+					y: 8
+				},
+				{
+					x: 6,
+					y: 12
+				}
+			];
+
+			var options = {
+				responsive: true,
+				maintainAspectRatio: false
+			};
+
+			var myChart = new Chart(ctx, {
+				type: "scatter",
+				data: {
+					datasets: [
+						{
+							label: "Population",
+							data: data,
+							borderColor: "#2196f3",
+							backgroundColor: "#2196f3"
+						}
+					]
+				},
+				options: options
+			});
+		</script>
+	</body>
+</html>

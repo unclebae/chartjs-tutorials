@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas width="750" id="myChart"></canvas>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+
+		<script>
+			var data = [
+				22006299,
+				15834918,
+				14919501,
+				14797756,
+				14433147,
+				13524139,
+				11877109,
+				11862073,
+				11779606,
+				10452000
+			]; // Add data values to array
+
+			var labels = [
+				"Tokyo",
+				"Mumbai",
+				"Mexico City",
+				"Shanghai",
+				"Sao Paulo",
+				"New York",
+				"Karachi",
+				"Buenos Aires",
+				"Delhi",
+				"Moscow"
+			]; // Add labels to array
+
+			var ctx = document.getElementById("myChart").getContext("2d");
+
+			var options = { responsive: true, maintainAspectRatio: false };
+			var myChart = new Chart(ctx, {
+				type: "radar",
+				data: {
+					labels: labels,
+					datasets: [
+						{
+							label: "Population",
+							data: data,
+							fill: true
+						}
+					]
+				},
+				options: options
+			});
+		</script>
+	</body>
+</html>
